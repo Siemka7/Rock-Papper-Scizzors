@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int cash, x;
+int cash, x, ok;
 
 
 
@@ -33,7 +33,7 @@ return x;
 
 int RandomNumber(){
     srand(time(0));
-    int a=rand()%3;
+    int a=rand()%3+1;
     return a;
 }
 
@@ -208,6 +208,7 @@ infile.close();
 ofstream outfile("cash.txt");
 
 int o;
+
 for(int i=-1; i<0; i--){
 
 
@@ -217,6 +218,7 @@ cout<<"Press [9] to End the game"<<endl;
 cin>>o;
 
 if(o==9){
+
     outfile<<cash;
     outfile.close();
     return 1;
@@ -234,10 +236,8 @@ while(o!=1){
 }
 
 StartGame();
-
-outfile<<cash;
 }
-
+outfile<<cash;
 outfile.close();
 return 0;
 }
